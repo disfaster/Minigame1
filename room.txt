@@ -1,0 +1,18 @@
+1
+living room
+this describes how this living room looks.
+this is the second line of the description
+this is the third.
+----
+NORTH 4
+EAST 7
+----
+2
+bath room
+this is about the bathroom.
+----
+SOUTH 5
+EAST 6
+NORTH 2
+-----
+
