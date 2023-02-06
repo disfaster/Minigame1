@@ -1,5 +1,5 @@
 1
-living room
+
 this describes how this living room looks.
 this is the second line of the description
 this is the third.

@@ -1,9 +1,12 @@
+/**
+ * Class: GameUI Class
+ * Name: Gabriel Kerven
+ * Date: 30 Jan 2023
+ * Purpose: Room class to create room objects(one no arg constructor and one arg constructor
+ */
+
 import java.util.ArrayList;
 
-//Class: Room Class
-//Name: Gabriel Kerven
-//Date: 30 Jan 2023
-//Purpose: Room class to create room objects(one no arg constructor and one arg constructor
 public class Room {
     //instance variables
     private int roomNum;

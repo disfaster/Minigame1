@@ -1,7 +1,10 @@
-//Class: Player Class
-//Name: Gabriel Kerven
-//Date: 30 Jan 2023
-//Purpose: Player class to create player objects
+/**
+ * Class: GameUI Class
+ * Name: Gabriel Kerven
+ * Date: 30 Jan 2023
+ * Purpose: Player class to create player objects
+ */
+
 public class Player {
     //instance variables
     private boolean isAlive;

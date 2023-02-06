@@ -1,7 +1,9 @@
-//Class: Exit Class
-//Name: Gabriel Kerven
-//Date: 30 Jan 2023
-//Purpose: Exit class to create objects for exits
+/**
+ * Class: GameUI Class
+ * Name: Gabriel Kerven
+ * Date: 30 Jan 2023
+ * Purpose: Exit class to create objects for exits
+ */
 public class Exit {
     //instance variable
     private String direction;
