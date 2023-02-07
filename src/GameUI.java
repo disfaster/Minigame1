@@ -16,35 +16,57 @@ public class GameUI {
         //create a Room type ArrayList  (1)
         ArrayList<Room> rooms = new ArrayList<Room>();
 
-        ArrayList<Exit> exits = new ArrayList<Exit>();
+
+        Scanner readRoomFile = null;
         //(2)
-          File file = new File("room.txt");
-          Scanner readRoomFile = new Scanner(file);
+        File file ;
+        try {
+            file = new File("room.txt");
+            readRoomFile = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found.");
 
-          while(readRoomFile.hasNextLine()){
-             int roomNumber =  Integer.parseInt(readRoomFile.nextLine());
-             String rName = readRoomFile.nextLine();
-              ArrayList<String> description = new ArrayList<String>();
-              String desciptionLine = "";
+        }
+        try {
+            while (readRoomFile.hasNextLine()) {
 
-             while(!desciptionLine.equalsIgnoreCase("----")){
-                 desciptionLine = readRoomFile.nextLine();
-                 description.add(desciptionLine);
-             }
+               int roomNumber = Integer.parseInt(readRoomFile.nextLine());
 
+               String rName = readRoomFile.nextLine();
+                ArrayList<String> description = new ArrayList<String>();
 
-              String exit = readRoomFile.nextLine();
-              //call split .  use the delimiter of " "
-              String[] x  = exit.split(" ");
-              exits.add(new Exit(x[0], Integer.parseInt(x[1])));
+                String desciptionLine = readRoomFile.nextLine();
+                description.add(desciptionLine);
+                while (!desciptionLine.equalsIgnoreCase("----")) {
+                    desciptionLine = readRoomFile.nextLine();
+                    if (desciptionLine.equalsIgnoreCase("----")) {
+                        break;
+                    }
+                    description.add(desciptionLine);
+                }
+                ArrayList<Exit> exits = new ArrayList<Exit>();
+                String exit = readRoomFile.nextLine();
+                //call split .  use the delimiter of " "
+                String[] x = exit.split(" ");
+                exits.add(new Exit(x[0], Integer.parseInt(x[1])));
 
-              //add each object to Exit type ArrayList
-              while(!exit.equalsIgnoreCase("----")){
-                  exit = readRoomFile.nextLine();
-                  x = exit.split(" ");
-                  exits.add(new Exit(x[0], Integer.parseInt(x[1])));
-              }
-          }
-        System.out.println(exits.toString());
+                //add each object to Exit type ArrayList
+                while (!exit.equalsIgnoreCase("----")) {
+                    exit = readRoomFile.nextLine();
+                    if (exit.equalsIgnoreCase("----")) {
+                        break;
+                    }
+                    x = exit.split(" ");
+                    exits.add(new Exit(x[0], Integer.parseInt(x[1])));
+                }
+                rooms.add(new Room(roomNumber, rName, description, exits));
+                System.out.println(exits.toString());
+
+            }
+        } catch (Exception e) {
+            System.out.println("Exception occurred");
+            e.printStackTrace();
+        }
+  // System.out.println(exits.toString());
     }
 }

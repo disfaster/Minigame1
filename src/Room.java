@@ -20,14 +20,23 @@ public class Room {
     }
 
     //arg Room constructor
-    public Room(int roomNum, String roomName, ArrayList<String> description, boolean isVisited, ArrayList<Exit> exits) {
+//    public Room(int roomNum, String roomName, ArrayList<String> description, boolean isVisited, ArrayList<Exit> exits) {
+//        this.roomNum = roomNum;
+//        this.roomName = roomName;
+//        this.description = description;
+//        this.isVisited = isVisited;
+//        this.exits = exits;
+//    }
+
+
+
+    public Room(int roomNum, String roomName, ArrayList<String> description, ArrayList<Exit> exits) {
         this.roomNum = roomNum;
         this.roomName = roomName;
         this.description = description;
-        this.isVisited = isVisited;
+      //  this.isVisited = isVisited;
         this.exits = exits;
     }
-
     //getters and setters
     public int getRoomNum() {
         return roomNum;
