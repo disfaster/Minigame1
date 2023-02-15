@@ -17,7 +17,12 @@ public class GameUI {
     public void movePlayer(Player p, ArrayList<Room> room){
         boolean x = true;
         Scanner in = new Scanner(System.in);
-        System.out.println("Where would you like to go?");
+        if(room.get(p.getLocation()).getRoomNum() == 14){
+            System.out.println("");
+        }
+        else {
+            System.out.println("Where would you like to go?");
+        }
         while(x){
             String move = in.nextLine();
             for (Exit ex : room.get(p.getLocation()).getExits()){
@@ -34,10 +39,17 @@ public class GameUI {
     }
 
     public void printRoom(Player p1, ArrayList<Room> r){
+        System.out.println("Room Visited? "  + r.get(p1.getLocation()).isVisited());
         System.out.println(r.get(p1.getLocation()).getRoomNum());
         System.out.println(r.get(p1.getLocation()).getRoomName());
         System.out.println(r.get(p1.getLocation()).getDescription());
-        System.out.println(r.get(p1.getLocation()).getExits().toString());
+        if (r.get(p1.getLocation()).getRoomNum() == 14){
+            System.out.println("");
+            System.exit(0);
+        }
+        else{
+            System.out.println(r.get(p1.getLocation()).getExits().toString());
+        }
         r.get(p1.getLocation()).setVisited(true);
     }
 
@@ -90,7 +102,6 @@ public class GameUI {
                 }
                 boolean visited = false;
                 rooms.add(new Room(roomNumber, rName, description, visited, exits));
-//                System.out.println(exits.toString());
             }
         } catch (Exception e) {
             System.out.println("Exception occurred");

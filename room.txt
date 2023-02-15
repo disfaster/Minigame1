@@ -122,7 +122,7 @@ Bat Nest
 A flock of bats fly past, their wings creating a symphony of fluttering as they dart and dive through the air.
 ----
 WEST 11
-SOUTH 15
+SOUTH 14
 ----
 14
 Finish
